@@ -1,0 +1,50 @@
+D:\Programas\Sistema de Produtos\Sistema de Produtos\bin\Debug\Sistema de Produtos.exe.config
+D:\Programas\Sistema de Produtos\Sistema de Produtos\bin\Debug\Sistema de Produtos.exe
+D:\Programas\Sistema de Produtos\Sistema de Produtos\bin\Debug\Sistema de Produtos.pdb
+D:\Programas\Sistema de Produtos\Sistema de Produtos\obj\Debug\Sistema de Produtos.csproj.AssemblyReference.cache
+D:\Programas\Sistema de Produtos\Sistema de Produtos\obj\Debug\Sistema_de_Produtos.Properties.Resources.resources
+D:\Programas\Sistema de Produtos\Sistema de Produtos\obj\Debug\Sistema de Produtos.csproj.GenerateResource.cache
+D:\Programas\Sistema de Produtos\Sistema de Produtos\obj\Debug\Sistema de Produtos.csproj.CoreCompileInputs.cache
+D:\Programas\Sistema de Produtos\Sistema de Produtos\obj\Debug\Sistema de Produtos.exe
+D:\Programas\Sistema de Produtos\Sistema de Produtos\obj\Debug\Sistema de Produtos.pdb
+D:\Programas\Sistema de Produtos\Sistema de Produtos\obj\Debug\Sistema_de_Produtos.Client.resources
+D:\Programas\Sistema de Produtos\Sistema de Produtos\obj\Debug\Sistema_de_Produtos.Home.resources
+D:\Programas\Sistema de Produtos\Sistema de Produtos\obj\Debug\Sistema_de_Produtos.ClientAdd.resources
+D:\Programas\Sistema de Produtos\Sistema de Produtos\obj\Debug\Sistema_de_Produtos.ClientOpen.resources
+D:\Programas\Sistema de Produtos\Sistema de Produtos\obj\Debug\Sistema_de_Produtos.NewSale.resources
+D:\Programas\Sistema de Produtos\Sistema de Produtos\obj\Debug\Sistema_de_Produtos.OpenSale.resources
+D:\Programas\Sistema de Produtos\Sistema de Produtos\obj\Debug\Sistema_de_Produtos.Sales.resources
+D:\Programas\Sistema de Produtos\Sistema de Produtos\obj\Debug\Sistema_de_Produtos.ProductEditing.resources
+D:\Programas\Sistema de Produtos\Sistema de Produtos\obj\Debug\Sistema_de_Produtos.Inventory.resources
+D:\Programas\Sistema de Produtos\Sistema de Produtos\bin\Debug\BouncyCastle.Cryptography.dll
+D:\Programas\Sistema de Produtos\Sistema de Produtos\bin\Debug\Google.Protobuf.dll
+D:\Programas\Sistema de Produtos\Sistema de Produtos\bin\Debug\K4os.Compression.LZ4.dll
+D:\Programas\Sistema de Produtos\Sistema de Produtos\bin\Debug\K4os.Compression.LZ4.Streams.dll
+D:\Programas\Sistema de Produtos\Sistema de Produtos\bin\Debug\K4os.Hash.xxHash.dll
+D:\Programas\Sistema de Produtos\Sistema de Produtos\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Programas\Sistema de Produtos\Sistema de Produtos\bin\Debug\MySql.Data.dll
+D:\Programas\Sistema de Produtos\Sistema de Produtos\bin\Debug\System.Buffers.dll
+D:\Programas\Sistema de Produtos\Sistema de Produtos\bin\Debug\System.Configuration.ConfigurationManager.dll
+D:\Programas\Sistema de Produtos\Sistema de Produtos\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\Programas\Sistema de Produtos\Sistema de Produtos\bin\Debug\System.IO.Pipelines.dll
+D:\Programas\Sistema de Produtos\Sistema de Produtos\bin\Debug\System.Memory.dll
+D:\Programas\Sistema de Produtos\Sistema de Produtos\bin\Debug\System.Numerics.Vectors.dll
+D:\Programas\Sistema de Produtos\Sistema de Produtos\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Programas\Sistema de Produtos\Sistema de Produtos\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\Programas\Sistema de Produtos\Sistema de Produtos\bin\Debug\ZstdSharp.dll
+D:\Programas\Sistema de Produtos\Sistema de Produtos\bin\Debug\BouncyCastle.Cryptography.xml
+D:\Programas\Sistema de Produtos\Sistema de Produtos\bin\Debug\Google.Protobuf.pdb
+D:\Programas\Sistema de Produtos\Sistema de Produtos\bin\Debug\Google.Protobuf.xml
+D:\Programas\Sistema de Produtos\Sistema de Produtos\bin\Debug\K4os.Compression.LZ4.xml
+D:\Programas\Sistema de Produtos\Sistema de Produtos\bin\Debug\K4os.Compression.LZ4.Streams.xml
+D:\Programas\Sistema de Produtos\Sistema de Produtos\bin\Debug\K4os.Hash.xxHash.xml
+D:\Programas\Sistema de Produtos\Sistema de Produtos\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\Programas\Sistema de Produtos\Sistema de Produtos\bin\Debug\MySql.Data.xml
+D:\Programas\Sistema de Produtos\Sistema de Produtos\bin\Debug\System.Buffers.xml
+D:\Programas\Sistema de Produtos\Sistema de Produtos\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\Programas\Sistema de Produtos\Sistema de Produtos\bin\Debug\System.IO.Pipelines.xml
+D:\Programas\Sistema de Produtos\Sistema de Produtos\bin\Debug\System.Memory.xml
+D:\Programas\Sistema de Produtos\Sistema de Produtos\bin\Debug\System.Numerics.Vectors.xml
+D:\Programas\Sistema de Produtos\Sistema de Produtos\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Programas\Sistema de Produtos\Sistema de Produtos\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\Programas\Sistema de Produtos\Sistema de Produtos\obj\Debug\Sistema .C0D3D77D.Up2Date
