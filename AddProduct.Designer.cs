@@ -47,9 +47,9 @@
             this.lb_user = new System.Windows.Forms.Label();
             this.pb_user = new System.Windows.Forms.PictureBox();
             this.btn_save = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_addNewProduct = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tb_id = new System.Windows.Forms.TextBox();
             this.btn_clear = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nud_quantity)).BeginInit();
             this.panel1.SuspendLayout();
@@ -83,6 +83,7 @@
             // 
             // cb_category
             // 
+            this.cb_category.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_category.FormattingEnabled = true;
             this.cb_category.Location = new System.Drawing.Point(15, 64);
             this.cb_category.Name = "cb_category";
@@ -92,6 +93,11 @@
             // nud_quantity
             // 
             this.nud_quantity.Location = new System.Drawing.Point(236, 25);
+            this.nud_quantity.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.nud_quantity.Minimum = new decimal(new int[] {
             1,
             0,
@@ -216,16 +222,18 @@
             this.btn_save.TabIndex = 15;
             this.btn_save.Text = "Salvar";
             this.btn_save.UseVisualStyleBackColor = true;
+            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
-            // button1
+            // btn_addNewProduct
             // 
-            this.button1.Location = new System.Drawing.Point(84, 134);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(128, 23);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Adicionar Novo Produto";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Visible = false;
+            this.btn_addNewProduct.Location = new System.Drawing.Point(84, 134);
+            this.btn_addNewProduct.Name = "btn_addNewProduct";
+            this.btn_addNewProduct.Size = new System.Drawing.Size(128, 23);
+            this.btn_addNewProduct.TabIndex = 16;
+            this.btn_addNewProduct.Text = "Adicionar Novo Produto";
+            this.btn_addNewProduct.UseVisualStyleBackColor = true;
+            this.btn_addNewProduct.Visible = false;
+            this.btn_addNewProduct.Click += new System.EventHandler(this.btn_addNewProduct_Click);
             // 
             // label8
             // 
@@ -236,13 +244,13 @@
             this.label8.TabIndex = 17;
             this.label8.Text = "ID";
             // 
-            // textBox1
+            // tb_id
             // 
-            this.textBox1.Location = new System.Drawing.Point(15, 24);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(18, 20);
-            this.textBox1.TabIndex = 18;
+            this.tb_id.Location = new System.Drawing.Point(15, 24);
+            this.tb_id.Name = "tb_id";
+            this.tb_id.ReadOnly = true;
+            this.tb_id.Size = new System.Drawing.Size(18, 20);
+            this.tb_id.TabIndex = 18;
             // 
             // btn_clear
             // 
@@ -252,6 +260,7 @@
             this.btn_clear.TabIndex = 19;
             this.btn_clear.Text = "Limpar";
             this.btn_clear.UseVisualStyleBackColor = true;
+            this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
             // 
             // ProductEditing
             // 
@@ -259,9 +268,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(309, 189);
             this.Controls.Add(this.btn_clear);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tb_id);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_addNewProduct);
             this.Controls.Add(this.btn_save);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label7);
@@ -313,9 +322,9 @@
         private System.Windows.Forms.Label lb_user;
         private System.Windows.Forms.PictureBox pb_user;
         private System.Windows.Forms.Button btn_save;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_addNewProduct;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tb_id;
         private System.Windows.Forms.Button btn_clear;
     }
 }

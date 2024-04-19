@@ -79,7 +79,7 @@ namespace Sistema_de_Produtos
 
         private void btn_search_Click(object sender, EventArgs e)
         {
-            string valueToSearch = "";
+            string valueToSearch = " ";
             string columnName = "";
 
             if (tb_id.Text != "")
