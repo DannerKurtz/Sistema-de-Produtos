@@ -34,22 +34,23 @@
             this.pb_user = new System.Windows.Forms.PictureBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.inicialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.novaVendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.abrirVendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cancelarVendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_refresh = new System.Windows.Forms.Button();
             this.tb_nameClient = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_openSale = new System.Windows.Forms.Button();
             this.btn_cancelSale = new System.Windows.Forms.Button();
             this.btn_sales = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.novaVendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.abrirVendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cancelarVendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dtp_date = new System.Windows.Forms.DateTimePicker();
+            this.dgv_sales = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_user)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_sales)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -101,19 +102,49 @@
             this.inicialToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
             this.inicialToolStripMenuItem.Text = "Vendas";
             // 
+            // novaVendaToolStripMenuItem
+            // 
+            this.novaVendaToolStripMenuItem.Name = "novaVendaToolStripMenuItem";
+            this.novaVendaToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.novaVendaToolStripMenuItem.Text = "Nova Venda";
+            this.novaVendaToolStripMenuItem.Click += new System.EventHandler(this.novaVendaToolStripMenuItem_Click);
+            // 
+            // abrirVendaToolStripMenuItem
+            // 
+            this.abrirVendaToolStripMenuItem.Name = "abrirVendaToolStripMenuItem";
+            this.abrirVendaToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.abrirVendaToolStripMenuItem.Text = "Abrir Venda";
+            this.abrirVendaToolStripMenuItem.Click += new System.EventHandler(this.abrirVendaToolStripMenuItem_Click);
+            // 
+            // cancelarVendaToolStripMenuItem
+            // 
+            this.cancelarVendaToolStripMenuItem.Name = "cancelarVendaToolStripMenuItem";
+            this.cancelarVendaToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.cancelarVendaToolStripMenuItem.Text = "Cancelar Venda";
+            // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btn_refresh);
             this.panel2.Controls.Add(this.tb_nameClient);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.btn_openSale);
             this.panel2.Controls.Add(this.btn_cancelSale);
             this.panel2.Controls.Add(this.btn_sales);
-            this.panel2.Controls.Add(this.dateTimePicker1);
+            this.panel2.Controls.Add(this.dtp_date);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 24);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(500, 80);
             this.panel2.TabIndex = 3;
+            // 
+            // btn_refresh
+            // 
+            this.btn_refresh.Location = new System.Drawing.Point(146, 12);
+            this.btn_refresh.Name = "btn_refresh";
+            this.btn_refresh.Size = new System.Drawing.Size(75, 23);
+            this.btn_refresh.TabIndex = 6;
+            this.btn_refresh.Text = "Atualizar";
+            this.btn_refresh.UseVisualStyleBackColor = true;
             // 
             // tb_nameClient
             // 
@@ -160,51 +191,31 @@
             this.btn_sales.UseVisualStyleBackColor = true;
             this.btn_sales.Click += new System.EventHandler(this.btn_sales_Click);
             // 
-            // dateTimePicker1
+            // dtp_date
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(12, 12);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(209, 20);
-            this.dateTimePicker1.TabIndex = 0;
+            this.dtp_date.Location = new System.Drawing.Point(12, 12);
+            this.dtp_date.Name = "dtp_date";
+            this.dtp_date.Size = new System.Drawing.Size(117, 20);
+            this.dtp_date.TabIndex = 0;
             // 
-            // dataGridView1
+            // dgv_sales
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 104);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(500, 319);
-            this.dataGridView1.TabIndex = 4;
-            // 
-            // novaVendaToolStripMenuItem
-            // 
-            this.novaVendaToolStripMenuItem.Name = "novaVendaToolStripMenuItem";
-            this.novaVendaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.novaVendaToolStripMenuItem.Text = "Nova Venda";
-            this.novaVendaToolStripMenuItem.Click += new System.EventHandler(this.novaVendaToolStripMenuItem_Click);
-            // 
-            // abrirVendaToolStripMenuItem
-            // 
-            this.abrirVendaToolStripMenuItem.Name = "abrirVendaToolStripMenuItem";
-            this.abrirVendaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.abrirVendaToolStripMenuItem.Text = "Abrir Venda";
-            this.abrirVendaToolStripMenuItem.Click += new System.EventHandler(this.abrirVendaToolStripMenuItem_Click);
-            // 
-            // cancelarVendaToolStripMenuItem
-            // 
-            this.cancelarVendaToolStripMenuItem.Name = "cancelarVendaToolStripMenuItem";
-            this.cancelarVendaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.cancelarVendaToolStripMenuItem.Text = "Cancelar Venda";
+            this.dgv_sales.AllowUserToAddRows = false;
+            this.dgv_sales.AllowUserToDeleteRows = false;
+            this.dgv_sales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_sales.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_sales.Location = new System.Drawing.Point(0, 104);
+            this.dgv_sales.Name = "dgv_sales";
+            this.dgv_sales.ReadOnly = true;
+            this.dgv_sales.Size = new System.Drawing.Size(500, 319);
+            this.dgv_sales.TabIndex = 4;
             // 
             // Sales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(500, 450);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgv_sales);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.panel1);
@@ -214,6 +225,7 @@
             this.Name = "Sales";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Venda";
+            this.Load += new System.EventHandler(this.Sales_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_user)).EndInit();
@@ -221,7 +233,7 @@
             this.menuStrip1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_sales)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -235,15 +247,16 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem inicialToolStripMenuItem;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtp_date;
         private System.Windows.Forms.TextBox tb_nameClient;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_openSale;
         private System.Windows.Forms.Button btn_cancelSale;
         private System.Windows.Forms.Button btn_sales;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgv_sales;
         private System.Windows.Forms.ToolStripMenuItem novaVendaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem abrirVendaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cancelarVendaToolStripMenuItem;
+        private System.Windows.Forms.Button btn_refresh;
     }
 }

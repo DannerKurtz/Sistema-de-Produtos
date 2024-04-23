@@ -35,6 +35,8 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.inicialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.nud_quantity = new System.Windows.Forms.NumericUpDown();
+            this.label8 = new System.Windows.Forms.Label();
             this.btn_add = new System.Windows.Forms.Button();
             this.btn_searchProduct = new System.Windows.Forms.Button();
             this.tb_product = new System.Windows.Forms.TextBox();
@@ -56,22 +58,20 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tb_name = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.tb_totalValue = new System.Windows.Forms.TextBox();
-            this.tb_discount = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.btn_completeSale = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btn_deleteItem = new System.Windows.Forms.Button();
+            this.btn_completeSale = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.tb_discount = new System.Windows.Forms.TextBox();
+            this.tb_totalValue = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pb_user)).BeginInit();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_quantity)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -123,7 +123,7 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.numericUpDown1);
+            this.panel2.Controls.Add(this.nud_quantity);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.btn_add);
             this.panel2.Controls.Add(this.btn_searchProduct);
@@ -138,6 +138,32 @@
             this.panel2.Size = new System.Drawing.Size(649, 126);
             this.panel2.TabIndex = 4;
             // 
+            // nud_quantity
+            // 
+            this.nud_quantity.Location = new System.Drawing.Point(485, 100);
+            this.nud_quantity.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nud_quantity.Name = "nud_quantity";
+            this.nud_quantity.Size = new System.Drawing.Size(62, 20);
+            this.nud_quantity.TabIndex = 48;
+            this.nud_quantity.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(482, 84);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(33, 13);
+            this.label8.TabIndex = 47;
+            this.label8.Text = "Qtde.";
+            // 
             // btn_add
             // 
             this.btn_add.Location = new System.Drawing.Point(553, 98);
@@ -146,6 +172,7 @@
             this.btn_add.TabIndex = 46;
             this.btn_add.Text = "Adicionar";
             this.btn_add.UseVisualStyleBackColor = true;
+            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // btn_searchProduct
             // 
@@ -218,6 +245,7 @@
             this.btn_search.TabIndex = 53;
             this.btn_search.Text = "...";
             this.btn_search.UseVisualStyleBackColor = true;
+            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
             // label6
             // 
@@ -332,32 +360,7 @@
             this.tb_name.Name = "tb_name";
             this.tb_name.Size = new System.Drawing.Size(153, 20);
             this.tb_name.TabIndex = 38;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(482, 84);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(33, 13);
-            this.label8.TabIndex = 47;
-            this.label8.Text = "Qtde.";
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(485, 100);
-            this.numericUpDown1.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(62, 20);
-            this.numericUpDown1.TabIndex = 48;
-            this.numericUpDown1.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.tb_name.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_name_KeyDown);
             // 
             // panel4
             // 
@@ -373,38 +376,14 @@
             this.panel4.Size = new System.Drawing.Size(649, 51);
             this.panel4.TabIndex = 5;
             // 
-            // label9
+            // btn_deleteItem
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(439, 8);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(58, 13);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Valor Total";
-            // 
-            // tb_totalValue
-            // 
-            this.tb_totalValue.Location = new System.Drawing.Point(442, 24);
-            this.tb_totalValue.Name = "tb_totalValue";
-            this.tb_totalValue.ReadOnly = true;
-            this.tb_totalValue.Size = new System.Drawing.Size(100, 20);
-            this.tb_totalValue.TabIndex = 1;
-            // 
-            // tb_discount
-            // 
-            this.tb_discount.Location = new System.Drawing.Point(326, 24);
-            this.tb_discount.Name = "tb_discount";
-            this.tb_discount.Size = new System.Drawing.Size(100, 20);
-            this.tb_discount.TabIndex = 2;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(326, 8);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(53, 13);
-            this.label10.TabIndex = 3;
-            this.label10.Text = "Desconto";
+            this.btn_deleteItem.Location = new System.Drawing.Point(12, 21);
+            this.btn_deleteItem.Name = "btn_deleteItem";
+            this.btn_deleteItem.Size = new System.Drawing.Size(82, 23);
+            this.btn_deleteItem.TabIndex = 5;
+            this.btn_deleteItem.Text = "Excluir Item";
+            this.btn_deleteItem.UseVisualStyleBackColor = true;
             // 
             // btn_completeSale
             // 
@@ -415,6 +394,39 @@
             this.btn_completeSale.Text = "Finalizar Venda";
             this.btn_completeSale.UseVisualStyleBackColor = true;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(326, 8);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(53, 13);
+            this.label10.TabIndex = 3;
+            this.label10.Text = "Desconto";
+            // 
+            // tb_discount
+            // 
+            this.tb_discount.Location = new System.Drawing.Point(326, 24);
+            this.tb_discount.Name = "tb_discount";
+            this.tb_discount.Size = new System.Drawing.Size(100, 20);
+            this.tb_discount.TabIndex = 2;
+            // 
+            // tb_totalValue
+            // 
+            this.tb_totalValue.Location = new System.Drawing.Point(442, 24);
+            this.tb_totalValue.Name = "tb_totalValue";
+            this.tb_totalValue.ReadOnly = true;
+            this.tb_totalValue.Size = new System.Drawing.Size(100, 20);
+            this.tb_totalValue.TabIndex = 1;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(439, 8);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(58, 13);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Valor Total";
+            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -423,15 +435,6 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(649, 222);
             this.dataGridView1.TabIndex = 6;
-            // 
-            // btn_deleteItem
-            // 
-            this.btn_deleteItem.Location = new System.Drawing.Point(12, 21);
-            this.btn_deleteItem.Name = "btn_deleteItem";
-            this.btn_deleteItem.Size = new System.Drawing.Size(82, 23);
-            this.btn_deleteItem.TabIndex = 5;
-            this.btn_deleteItem.Text = "Excluir Item";
-            this.btn_deleteItem.UseVisualStyleBackColor = true;
             // 
             // NewSale
             // 
@@ -456,9 +459,9 @@
             this.menuStrip1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_quantity)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -496,7 +499,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox tb_productCode;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown nud_quantity;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button btn_completeSale;

@@ -40,5 +40,20 @@ namespace Sistema_de_Produtos
             OpenSale openSale = new OpenSale();
             openSale.ShowDialog();
         }
+
+        private void Sales_Load(object sender, EventArgs e)
+        {
+            string query = String.Format(@"
+                SELECT
+                    tb_sales.n_idSales as 'Num. Venda',
+                    tb_client.t_nameClient as 'Nome Cliente', 
+                    tb_sales.f_amount as 'Valor Total',
+                    tb_sales.d_date as 'Data'
+                FROM
+                    tb_sales
+                INNER JOIN
+                    tb_client ON tb_sales.n_idClient = tb_client.n_idClient;");
+            dgv_sales.DataSource = Banco.DQL(query);
+        }
     }
 }

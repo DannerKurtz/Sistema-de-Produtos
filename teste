@@ -1,0 +1,560 @@
+[1mdiff --git a/NewSale.Designer.cs b/NewSale.Designer.cs[m
+[1mindex 6ed5b61..3feb96b 100644[m
+[1m--- a/NewSale.Designer.cs[m
+[1m+++ b/NewSale.Designer.cs[m
+[36m@@ -35,6 +35,8 @@[m
+             this.menuStrip1 = new System.Windows.Forms.MenuStrip();[m
+             this.inicialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();[m
+             this.panel2 = new System.Windows.Forms.Panel();[m
+[32m+[m[32m            this.nud_quantity = new System.Windows.Forms.NumericUpDown();[m
+[32m+[m[32m            this.label8 = new System.Windows.Forms.Label();[m
+             this.btn_add = new System.Windows.Forms.Button();[m
+             this.btn_searchProduct = new System.Windows.Forms.Button();[m
+             this.tb_product = new System.Windows.Forms.TextBox();[m
+[36m@@ -56,22 +58,20 @@[m
+             this.label3 = new System.Windows.Forms.Label();[m
+             this.label1 = new System.Windows.Forms.Label();[m
+             this.tb_name = new System.Windows.Forms.TextBox();[m
+[31m-            this.label8 = new System.Windows.Forms.Label();[m
+[31m-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();[m
+             this.panel4 = new System.Windows.Forms.Panel();[m
+[31m-            this.label9 = new System.Windows.Forms.Label();[m
+[31m-            this.tb_totalValue = new System.Windows.Forms.TextBox();[m
+[31m-            this.tb_discount = new System.Windows.Forms.TextBox();[m
+[31m-            this.label10 = new System.Windows.Forms.Label();[m
+[32m+[m[32m            this.btn_deleteItem = new System.Windows.Forms.Button();[m
+             this.btn_completeSale = new System.Windows.Forms.Button();[m
+[32m+[m[32m            this.label10 = new System.Windows.Forms.Label();[m
+[32m+[m[32m            this.tb_discount = new System.Windows.Forms.TextBox();[m
+[32m+[m[32m            this.tb_totalValue = new System.Windows.Forms.TextBox();[m
+[32m+[m[32m            this.label9 = new System.Windows.Forms.Label();[m
+             this.dataGridView1 = new System.Windows.Forms.DataGridView();[m
+[31m-            this.btn_deleteItem = new System.Windows.Forms.Button();[m
+             ((System.ComponentModel.ISupportInitialize)(this.pb_user)).BeginInit();[m
+             this.panel1.SuspendLayout();[m
+             this.menuStrip1.SuspendLayout();[m
+             this.panel2.SuspendLayout();[m
+[32m+[m[32m            ((System.ComponentModel.ISupportInitialize)(this.nud_quantity)).BeginInit();[m
+             this.panel3.SuspendLayout();[m
+[31m-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();[m
+             this.panel4.SuspendLayout();[m
+             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();[m
+             this.SuspendLayout();[m
+[36m@@ -123,7 +123,7 @@[m
+             // [m
+             // panel2[m
+             // [m
+[31m-            this.panel2.Controls.Add(this.numericUpDown1);[m
+[32m+[m[32m            this.panel2.Controls.Add(this.nud_quantity);[m
+             this.panel2.Controls.Add(this.label8);[m
+             this.panel2.Controls.Add(this.btn_add);[m
+             this.panel2.Controls.Add(this.btn_searchProduct);[m
+[36m@@ -138,6 +138,32 @@[m
+             this.panel2.Size = new System.Drawing.Size(649, 126);[m
+             this.panel2.TabIndex = 4;[m
+             // [m
+[32m+[m[32m            // nud_quantity[m
+[32m+[m[32m            //[m[41m [m
+[32m+[m[32m            this.nud_quantity.Location = new System.Drawing.Point(485, 100);[m
+[32m+[m[32m            this.nud_quantity.Minimum = new decimal(new int[] {[m
+[32m+[m[32m            1,[m
+[32m+[m[32m            0,[m
+[32m+[m[32m            0,[m
+[32m+[m[32m            0});[m
+[32m+[m[32m            this.nud_quantity.Name = "nud_quantity";[m
+[32m+[m[32m            this.nud_quantity.Size = new System.Drawing.Size(62, 20);[m
+[32m+[m[32m            this.nud_quantity.TabIndex = 48;[m
+[32m+[m[32m            this.nud_quantity.Value = new decimal(new int[] {[m
+[32m+[m[32m            1,[m
+[32m+[m[32m            0,[m
+[32m+[m[32m            0,[m
+[32m+[m[32m            0});[m
+[32m+[m[32m            //[m[41m [m
+[32m+[m[32m            // label8[m
+[32m+[m[32m            //[m[41m [m
+[32m+[m[32m            this.label8.AutoSize = true;[m
+[32m+[m[32m            this.label8.Location = new System.Drawing.Point(482, 84);[m
+[32m+[m[32m            this.label8.Name = "label8";[m
+[32m+[m[32m            this.label8.Size = new System.Drawing.Size(33, 13);[m
+[32m+[m[32m            this.label8.TabIndex = 47;[m
+[32m+[m[32m            this.label8.Text = "Qtde.";[m
+[32m+[m[32m            //[m[41m [m
+             // btn_add[m
+             // [m
+             this.btn_add.Location = new System.Drawing.Point(553, 98);[m
+[36m@@ -146,6 +172,7 @@[m
+             this.btn_add.TabIndex = 46;[m
+             this.btn_add.Text = "Adicionar";[m
+             this.btn_add.UseVisualStyleBackColor = true;[m
+[32m+[m[32m            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);[m
+             // [m
+             // btn_searchProduct[m
+             // [m
+[36m@@ -218,6 +245,7 @@[m
+             this.btn_search.TabIndex = 53;[m
+             this.btn_search.Text = "...";[m
+             this.btn_search.UseVisualStyleBackColor = true;[m
+[32m+[m[32m            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);[m
+             // [m
+             // label6[m
+             // [m
+[36m@@ -332,32 +360,7 @@[m
+             this.tb_name.Name = "tb_name";[m
+             this.tb_name.Size = new System.Drawing.Size(153, 20);[m
+             this.tb_name.TabIndex = 38;[m
+[31m-            // [m
+[31m-            // label8[m
+[31m-            // [m
+[31m-            this.label8.AutoSize = true;[m
+[31m-            this.label8.Location = new System.Drawing.Point(482, 84);[m
+[31m-            this.label8.Name = "label8";[m
+[31m-            this.label8.Size = new System.Drawing.Size(33, 13);[m
+[31m-            this.label8.TabIndex = 47;[m
+[31m-            this.label8.Text = "Qtde.";[m
+[31m-            // [m
+[31m-            // numericUpDown1[m
+[31m-            // [m
+[31m-            this.numericUpDown1.Location = new System.Drawing.Point(485, 100);[m
+[31m-            this.numericUpDown1.Minimum = new decimal(new int[] {[m
+[31m-            1,[m
+[31m-            0,[m
+[31m-            0,[m
+[31m-            0});[m
+[31m-            this.numericUpDown1.Name = "numericUpDown1";[m
+[31m-            this.numericUpDown1.Size = new System.Drawing.Size(62, 20);[m
+[31m-            this.numericUpDown1.TabIndex = 48;[m
+[31m-            this.numericUpDown1.Value = new decimal(new int[] {[m
+[31m-            1,[m
+[31m-            0,[m
+[31m-            0,[m
+[31m-            0});[m
+[32m+[m[32m            this.tb_name.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_name_KeyDown);[m
+             // [m
+             // panel4[m
+             // [m
+[36m@@ -373,29 +376,23 @@[m
+             this.panel4.Size = new System.Drawing.Size(649, 51);[m
+             this.panel4.TabIndex = 5;[m
+             // [m
+[31m-            // label9[m
+[31m-            // [m
+[31m-            this.label9.AutoSize = true;[m
+[31m-            this.label9.Location = new System.Drawing.Point(439, 8);[m
+[31m-            this.label9.Name = "label9";[m
+[31m-            this.label9.Size = new System.Drawing.Size(58, 13);[m
+[31m-            this.label9.TabIndex = 0;[m
+[31m-            this.label9.Text = "Valor Total";[m
+[31m-            // [m
+[31m-            // tb_totalValue[m
+[32m+[m[32m            // btn_deleteItem[m
+             // [m
+[31m-            this.tb_totalValue.Location = new System.Drawing.Point(442, 24);[m
+[31m-            this.tb_totalValue.Name = "tb_totalValue";[m
+[31m-            this.tb_totalValue.ReadOnly = true;[m
+[31m-            this.tb_totalValue.Size = new System.Drawing.Size(100, 20);[m
+[31m-            this.tb_totalValue.TabIndex = 1;[m
+[32m+[m[32m            this.btn_deleteItem.Location = new System.Drawing.Point(12, 21);[m
+[32m+[m[32m            this.btn_deleteItem.Name = "btn_deleteItem";[m
+[32m+[m[32m            this.btn_deleteItem.Size = new System.Drawing.Size(82, 23);[m
+[32m+[m[32m            this.btn_deleteItem.TabIndex = 5;[m
+[32m+[m[32m            this.btn_deleteItem.Text = "Excluir Item";[m
+[32m+[m[32m            this.btn_deleteItem.UseVisualStyleBackColor = true;[m
+             // [m
+[31m-            // tb_discount[m
+[32m+[m[32m            // btn_completeSale[m
+             // [m
+[31m-            this.tb_discount.Location = new System.Drawing.Point(326, 24);[m
+[31m-            this.tb_discount.Name = "tb_discount";[m
+[31m-            this.tb_discount.Size = new System.Drawing.Size(100, 20);[m
+[31m-            this.tb_discount.TabIndex = 2;[m
+[32m+[m[32m            this.btn_completeSale.Location = new System.Drawing.Point(553, 22);[m
+[32m+[m[32m            this.btn_completeSale.Name = "btn_completeSale";[m
+[32m+[m[32m            this.btn_completeSale.Size = new System.Drawing.Size(87, 23);[m
+[32m+[m[32m            this.btn_completeSale.TabIndex = 4;[m
+[32m+[m[32m            this.btn_completeSale.Text = "Finalizar Venda";[m
+[32m+[m[32m            this.btn_completeSale.UseVisualStyleBackColor = true;[m
+             // [m
+             // label10[m
+             // [m
+[36m@@ -406,14 +403,29 @@[m
+             this.label10.TabIndex = 3;[m
+             this.label10.Text = "Desconto";[m
+             // [m
+[31m-            // btn_completeSale[m
+[32m+[m[32m            // tb_discount[m
+             // [m
+[31m-            this.btn_completeSale.Location = new System.Drawing.Point(553, 22);[m
+[31m-            this.btn_completeSale.Name = "btn_completeSale";[m
+[31m-            this.btn_completeSale.Size = new System.Drawing.Size(87, 23);[m
+[31m-            this.btn_completeSale.TabIndex = 4;[m
+[31m-            this.btn_completeSale.Text = "Finalizar Venda";[m
+[31m-            this.btn_completeSale.UseVisualStyleBackColor = true;[m
+[32m+[m[32m            this.tb_discount.Location = new System.Drawing.Point(326, 24);[m
+[32m+[m[32m            this.tb_discount.Name = "tb_discount";[m
+[32m+[m[32m            this.tb_discount.Size = new System.Drawing.Size(100, 20);[m
+[32m+[m[32m            this.tb_discount.TabIndex = 2;[m
+[32m+[m[32m            //[m[41m [m
+[32m+[m[32m            // tb_totalValue[m
+[32m+[m[32m            //[m[41m [m
+[32m+[m[32m            this.tb_totalValue.Location = new System.Drawing.Point(442, 24);[m
+[32m+[m[32m            this.tb_totalValue.Name = "tb_totalValue";[m
+[32m+[m[32m            this.tb_totalValue.ReadOnly = true;[m
+[32m+[m[32m            this.tb_totalValue.Size = new System.Drawing.Size(100, 20);[m
+[32m+[m[32m            this.tb_totalValue.TabIndex = 1;[m
+[32m+[m[32m            //[m[41m [m
+[32m+[m[32m            // label9[m
+[32m+[m[32m            //[m[41m [m
+[32m+[m[32m            this.label9.AutoSize = true;[m
+[32m+[m[32m            this.label9.Location = new System.Drawing.Point(439, 8);[m
+[32m+[m[32m            this.label9.Name = "label9";[m
+[32m+[m[32m            this.label9.Size = new System.Drawing.Size(58, 13);[m
+[32m+[m[32m            this.label9.TabIndex = 0;[m
+[32m+[m[32m            this.label9.Text = "Valor Total";[m
+             // [m
+             // dataGridView1[m
+             // [m
+[36m@@ -424,15 +436,6 @@[m
+             this.dataGridView1.Size = new System.Drawing.Size(649, 222);[m
+             this.dataGridView1.TabIndex = 6;[m
+             // [m
+[31m-            // btn_deleteItem[m
+[31m-            // [m
+[31m-            this.btn_deleteItem.Location = new System.Drawing.Point(12, 21);[m
+[31m-            this.btn_deleteItem.Name = "btn_deleteItem";[m
+[31m-            this.btn_deleteItem.Size = new System.Drawing.Size(82, 23);[m
+[31m-            this.btn_deleteItem.TabIndex = 5;[m
+[31m-            this.btn_deleteItem.Text = "Excluir Item";[m
+[31m-            this.btn_deleteItem.UseVisualStyleBackColor = true;[m
+[31m-            // [m
+             // NewSale[m
+             // [m
+             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);[m
+[36m@@ -456,9 +459,9 @@[m
+             this.menuStrip1.PerformLayout();[m
+             this.panel2.ResumeLayout(false);[m
+             this.panel2.PerformLayout();[m
+[32m+[m[32m            ((System.ComponentModel.ISupportInitialize)(this.nud_quantity)).EndInit();[m
+             this.panel3.ResumeLayout(false);[m
+             this.panel3.PerformLayout();[m
+[31m-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();[m
+             this.panel4.ResumeLayout(false);[m
+             this.panel4.PerformLayout();[m
+             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();[m
+[36m@@ -496,7 +499,7 @@[m
+         private System.Windows.Forms.Label label7;[m
+         private System.Windows.Forms.TextBox tb_productCode;[m
+         private System.Windows.Forms.Label label4;[m
+[31m-        private System.Windows.Forms.NumericUpDown numericUpDown1;[m
+[32m+[m[32m        private System.Windows.Forms.NumericUpDown nud_quantity;[m
+         private System.Windows.Forms.Label label8;[m
+         private System.Windows.Forms.Panel panel4;[m
+         private System.Windows.Forms.Button btn_completeSale;[m
+[1mdiff --git a/NewSale.cs b/NewSale.cs[m
+[1mindex abb0e59..8e3aa07 100644[m
+[1m--- a/NewSale.cs[m
+[1m+++ b/NewSale.cs[m
+[36m@@ -1,4 +1,5 @@[m
+[31m-﻿using System;[m
+[32m+[m[32m﻿using MySqlX.XDevAPI.Relational;[m
+[32m+[m[32musing System;[m
+ using System.Collections.Generic;[m
+ using System.ComponentModel;[m
+ using System.Data;[m
+[36m@@ -12,9 +13,66 @@[m [mnamespace Sistema_de_Produtos[m
+ {[m
+     public partial class NewSale : Form[m
+     {[m
+[32m+[m[32m        int idSale;[m
+[32m+[m[32m        int idProduct;[m
+         public NewSale()[m
+         {[m
+             InitializeComponent();[m
+         }[m
+[32m+[m
+[32m+[m[32m        private void btn_search_Click(object sender, EventArgs e)[m
+[32m+[m[32m        {[m
+[32m+[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        private void tb_name_KeyDown(object sender, KeyEventArgs e)[m
+[32m+[m[32m        {[m
+[32m+[m[32m            if (e.KeyCode == Keys.Enter)[m
+[32m+[m[32m            {[m
+[32m+[m[32m                DataTable dataTable = new DataTable();[m
+[32m+[m[32m                string query = String.Format(@"[m
+[32m+[m[32m                SELECT[m[41m [m
+[32m+[m[32m                    *[m
+[32m+[m[32m                FROM[m
+[32m+[m[32m                    tb_client[m
+[32m+[m[32m                WHERE[m
+[32m+[m[32m                    t_nameClient = '{0}';", tb_name.Text);[m
+[32m+[m
+[32m+[m[32m                dataTable = Banco.DQL(query);[m
+[32m+[m[32m                mtb_identity.Text = dataTable.Rows[0].Field<string>("t_cpf_cnpj");[m
+[32m+[m[32m                mtb_telephone.Text = dataTable.Rows[0].Field<string>("t_telephone");[m
+[32m+[m[32m                tb_email.Text = dataTable.Rows[0].Field<string>("t_email");[m
+[32m+[m[32m                tb_endereco.Text = dataTable.Rows[0].Field<string>("t_address");[m
+[32m+[m[32m                tb_bairro.Text = dataTable.Rows[0].Field<string>("t_district");[m
+[32m+[m[32m                idSale = dataTable.Rows[0].Field<int>("n_idClient");[m
+[32m+[m[32m            }[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        private void btn_add_Click(object sender, EventArgs e)[m
+[32m+[m[32m        {[m
+[32m+[m[32m            DataTable dataTable = new DataTable();[m
+[32m+[m[32m            string query = String.Format(@"[m
+[32m+[m[32m                SELECT[m[41m  [m
+[32m+[m[32m                    *[m
+[32m+[m[32m                FROM[m
+[32m+[m[32m                    tb_products[m
+[32m+[m[32m                WHERE[m[41m [m
+[32m+[m[32m                    t_nameProduct = '{0}';",tb_product.Text);[m
+[32m+[m[32m            dataTable = Banco.DQL(query);[m
+[32m+[m[32m            tb_product.Text = dataTable.Rows[0].Field<String>("t_nameProduct");[m
+[32m+[m[32m            tb_productCode.Text = dataTable.Rows[0].Field<int>("n_idProducts").ToString();[m
+[32m+[m[32m            idProduct = dataTable.Rows[0].Field<int>("n_idProducts");[m
+[32m+[m[32m            string queryAdd = String.Format(@"[m
+[32m+[m[32m                INSERT INTO[m[41m  [m
+[32m+[m[32m                    tb_salesproductsrelationship[m
+[32m+[m[32m                    (n_idSale, n_idProduct, n_amount)[m
+[32m+[m[32m                VALUES[m
+[32m+[m[32m                    ({0},{1},{2});", idSale, idProduct, nud_quantity.Value);[m
+[32m+[m[32m            Banco.DML(queryAdd);[m
+[32m+[m[32m        }[m
+[32m+[m[32m        private void OpenSale()[m
+[32m+[m[32m        {[m
+[32m+[m[32m            string queryOpenSale = String.Format(@"");[m
+[32m+[m[32m        }[m
+     }[m
+ }[m
+[1mdiff --git a/Sales.Designer.cs b/Sales.Designer.cs[m
+[1mindex 1fcde3b..c0eca6a 100644[m
+[1m--- a/Sales.Designer.cs[m
+[1m+++ b/Sales.Designer.cs[m
+[36m@@ -34,22 +34,23 @@[m
+             this.pb_user = new System.Windows.Forms.PictureBox();[m
+             this.menuStrip1 = new System.Windows.Forms.MenuStrip();[m
+             this.inicialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();[m
+[32m+[m[32m            this.novaVendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();[m
+[32m+[m[32m            this.abrirVendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();[m
+[32m+[m[32m            this.cancelarVendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();[m
+             this.panel2 = new System.Windows.Forms.Panel();[m
+[32m+[m[32m            this.btn_refresh = new System.Windows.Forms.Button();[m
+             this.tb_nameClient = new System.Windows.Forms.TextBox();[m
+             this.label1 = new System.Windows.Forms.Label();[m
+             this.btn_openSale = new System.Windows.Forms.Button();[m
+             this.btn_cancelSale = new System.Windows.Forms.Button();[m
+             this.btn_sales = new System.Windows.Forms.Button();[m
+[31m-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();[m
+[31m-            this.dataGridView1 = new System.Windows.Forms.DataGridView();[m
+[31m-            this.novaVendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();[m
+[31m-            this.abrirVendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();[m
+[31m-            this.cancelarVendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();[m
+[32m+[m[32m            this.dtp_date = new System.Windows.Forms.DateTimePicker();[m
+[32m+[m[32m            this.dgv_sales = new System.Windows.Forms.DataGridView();[m
+             this.panel1.SuspendLayout();[m
+             ((System.ComponentModel.ISupportInitialize)(this.pb_user)).BeginInit();[m
+             this.menuStrip1.SuspendLayout();[m
+             this.panel2.SuspendLayout();[m
+[31m-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();[m
+[32m+[m[32m            ((System.ComponentModel.ISupportInitialize)(this.dgv_sales)).BeginInit();[m
+             this.SuspendLayout();[m
+             // [m
+             // panel1[m
+[36m@@ -101,20 +102,50 @@[m
+             this.inicialToolStripMenuItem.Size = new System.Drawing.Size(56, 20);[m
+             this.inicialToolStripMenuItem.Text = "Vendas";[m
+             // [m
+[32m+[m[32m            // novaVendaToolStripMenuItem[m
+[32m+[m[32m            //[m[41m [m
+[32m+[m[32m            this.novaVendaToolStripMenuItem.Name = "novaVendaToolStripMenuItem";[m
+[32m+[m[32m            this.novaVendaToolStripMenuItem.Size = new System.Drawing.Size(155, 22);[m
+[32m+[m[32m            this.novaVendaToolStripMenuItem.Text = "Nova Venda";[m
+[32m+[m[32m            this.novaVendaToolStripMenuItem.Click += new System.EventHandler(this.novaVendaToolStripMenuItem_Click);[m
+[32m+[m[32m            //[m[41m [m
+[32m+[m[32m            // abrirVendaToolStripMenuItem[m
+[32m+[m[32m            //[m[41m [m
+[32m+[m[32m            this.abrirVendaToolStripMenuItem.Name = "abrirVendaToolStripMenuItem";[m
+[32m+[m[32m            this.abrirVendaToolStripMenuItem.Size = new System.Drawing.Size(155, 22);[m
+[32m+[m[32m            this.abrirVendaToolStripMenuItem.Text = "Abrir Venda";[m
+[32m+[m[32m            this.abrirVendaToolStripMenuItem.Click += new System.EventHandler(this.abrirVendaToolStripMenuItem_Click);[m
+[32m+[m[32m            //[m[41m [m
+[32m+[m[32m            // cancelarVendaToolStripMenuItem[m
+[32m+[m[32m            //[m[41m [m
+[32m+[m[32m            this.cancelarVendaToolStripMenuItem.Name = "cancelarVendaToolStripMenuItem";[m
+[32m+[m[32m            this.cancelarVendaToolStripMenuItem.Size = new System.Drawing.Size(155, 22);[m
+[32m+[m[32m            this.cancelarVendaToolStripMenuItem.Text = "Cancelar Venda";[m
+[32m+[m[32m            //[m[41m [m
+             // panel2[m
+             // [m
+[32m+[m[32m            this.panel2.Controls.Add(this.btn_refresh);[m
+             this.panel2.Controls.Add(this.tb_nameClient);[m
+             this.panel2.Controls.Add(this.label1);[m
+             this.panel2.Controls.Add(this.btn_openSale);[m
+             this.panel2.Controls.Add(this.btn_cancelSale);[m
+             this.panel2.Controls.Add(this.btn_sales);[m
+[31m-            this.panel2.Controls.Add(this.dateTimePicker1);[m
+[32m+[m[32m            this.panel2.Controls.Add(this.dtp_date);[m
+             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;[m
+             this.panel2.Location = new System.Drawing.Point(0, 24);[m
+             this.panel2.Name = "panel2";[m
+             this.panel2.Size = new System.Drawing.Size(500, 80);[m
+             this.panel2.TabIndex = 3;[m
+             // [m
+[32m+[m[32m            // btn_refresh[m
+[32m+[m[32m            //[m[41m [m
+[32m+[m[32m            this.btn_refresh.Location = new System.Drawing.Point(146, 12);[m
+[32m+[m[32m            this.btn_refresh.Name = "btn_refresh";[m
+[32m+[m[32m            this.btn_refresh.Size = new System.Drawing.Size(75, 23);[m
+[32m+[m[32m            this.btn_refresh.TabIndex = 6;[m
+[32m+[m[32m            this.btn_refresh.Text = "Atualizar";[m
+[32m+[m[32m            this.btn_refresh.UseVisualStyleBackColor = true;[m
+[32m+[m[32m            //[m[41m [m
+             // tb_nameClient[m
+             // [m
+             this.tb_nameClient.Location = new System.Drawing.Point(12, 51);[m
+[36m@@ -160,51 +191,31 @@[m
+             this.btn_sales.UseVisualStyleBackColor = true;[m
+             this.btn_sales.Click += new System.EventHandler(this.btn_sales_Click);[m
+             // [m
+[31m-            // dateTimePicker1[m
+[31m-            // [m
+[31m-            this.dateTimePicker1.Location = new System.Drawing.Point(12, 12);[m
+[31m-            this.dateTimePicker1.Name = "dateTimePicker1";[m
+[31m-            this.dateTimePicker1.Size = new System.Drawing.Size(209, 20);[m
+[31m-            this.dateTimePicker1.TabIndex = 0;[m
+[31m-            // [m
+[31m-            // dataGridView1[m
+[32m+[m[32m            // dtp_date[m
+             // [m
+[31m-            this.dataGridView1.AllowUserToAddRows = false;[m
+[31m-            this.dataGridView1.AllowUserToDeleteRows = false;[m
+[31m-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;[m
+[31m-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;[m
+[31m-            this.dataGridView1.Location = new System.Drawing.Point(0, 104);[m
+[31m-            this.dataGridView1.Name = "dataGridView1";[m
+[31m-            this.dataGridView1.ReadOnly = true;[m
+[31m-            this.dataGridView1.Size = new System.Drawing.Size(500, 319);[m
+[31m-            this.dataGridView1.TabIndex = 4;[m
+[32m+[m[32m            this.dtp_date.Location = new System.Drawing.Point(12, 12);[m
+[32m+[m[32m            this.dtp_date.Name = "dtp_date";[m
+[32m+[m[32m            this.dtp_date.Size = new System.Drawing.Size(117, 20);[m
+[32m+[m[32m            this.dtp_date.TabIndex = 0;[m
+             // [m
+[31m-            // novaVendaToolStripMenuItem[m
+[31m-            // [m
+[31m-            this.novaVendaToolStripMenuItem.Name = "novaVendaToolStripMenuItem";[m
+[31m-            this.novaVendaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);[m
+[31m-            this.novaVendaToolStripMenuItem.Text = "Nova Venda";[m
+[31m-            this.novaVendaToolStripMenuItem.Click += new System.EventHandler(this.novaVendaToolStripMenuItem_Click);[m
+[32m+[m[32m            // dgv_sales[m
+             // [m
+[31m-            // abrirVendaToolStripMenuItem[m
+[31m-            // [m
+[31m-            this.abrirVendaToolStripMenuItem.Name = "abrirVendaToolStripMenuItem";[m
+[31m-            this.abrirVendaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);[m
+[31m-            this.abrirVendaToolStripMenuItem.Text = "Abrir Venda";[m
+[31m-            this.abrirVendaToolStripMenuItem.Click += new System.EventHandler(this.abrirVendaToolStripMenuItem_Click);[m
+[31m-            // [m
+[31m-            // cancelarVendaToolStripMenuItem[m
+[31m-            // [m
+[31m-            this.cancelarVendaToolStripMenuItem.Name = "cancelarVendaToolStripMenuItem";[m
+[31m-            this.cancelarVendaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);[m
+[31m-            this.cancelarVendaToolStripMenuItem.Text = "Cancelar Venda";[m
+[32m+[m[32m            this.dgv_sales.AllowUserToAddRows = false;[m
+[32m+[m[32m            this.dgv_sales.AllowUserToDeleteRows = false;[m
+[32m+[m[32m            this.dgv_sales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;[m
+[32m+[m[32m            this.dgv_sales.Dock = System.Windows.Forms.DockStyle.Fill;[m
+[32m+[m[32m            this.dgv_sales.Location = new System.Drawing.Point(0, 104);[m
+[32m+[m[32m            this.dgv_sales.Name = "dgv_sales";[m
+[32m+[m[32m            this.dgv_sales.ReadOnly = true;[m
+[32m+[m[32m            this.dgv_sales.Size = new System.Drawing.Size(500, 319);[m
+[32m+[m[32m            this.dgv_sales.TabIndex = 4;[m
+             // [m
+             // Sales[m
+             // [m
+             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);[m
+             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;[m
+             this.ClientSize = new System.Drawing.Size(500, 450);[m
+[31m-            this.Controls.Add(this.dataGridView1);[m
+[32m+[m[32m            this.Controls.Add(this.dgv_sales);[m
+             this.Controls.Add(this.panel2);[m
+             this.Controls.Add(this.menuStrip1);[m
+             this.Controls.Add(this.panel1);[m
+[36m@@ -214,6 +225,7 @@[m
+             this.Name = "Sales";[m
+             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;[m
+             this.Text = "Venda";[m
+[32m+[m[32m            this.Load += new System.EventHandler(this.Sales_Load);[m
+             this.panel1.ResumeLayout(false);[m
+             this.panel1.PerformLayout();[m
+             ((System.ComponentModel.ISupportInitialize)(this.pb_user)).EndInit();[m
+[36m@@ -221,7 +233,7 @@[m
+             this.menuStrip1.PerformLayout();[m
+             this.panel2.ResumeLayout(false);[m
+             this.panel2.PerformLayout();[m
+[31m-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();[m
+[32m+[m[32m            ((System.ComponentModel.ISupportInitialize)(this.dgv_sales)).EndInit();[m
+             this.ResumeLayout(false);[m
+             this.PerformLayout();[m
+ [m
+[36m@@ -235,15 +247,16 @@[m
+         private System.Windows.Forms.MenuStrip menuStrip1;[m
+         private System.Windows.Forms.ToolStripMenuItem inicialToolStripMenuItem;[m
+         private System.Windows.Forms.Panel panel2;[m
+[31m-        private System.Windows.Forms.DateTimePicker dateTimePicker1;[m
+[32m+[m[32m        private System.Windows.Forms.DateTimePicker dtp_date;[m
+         private System.Windows.Forms.TextBox tb_nameClient;[m
+         private System.Windows.Forms.Label label1;[m
+         private System.Windows.Forms.Button btn_openSale;[m
+         private System.Windows.Forms.Button btn_cancelSale;[m
+         private System.Windows.Forms.Button btn_sales;[m
+[31m-        private System.Windows.Forms.DataGridView dataGridView1;[m
+[32m+[m[32m        private System.Windows.Forms.DataGridView dgv_sales;[m
+         private System.Windows.Forms.ToolStripMenuItem novaVendaToolStripMenuItem;[m
+         private System.Windows.Forms.ToolStripMenuItem abrirVendaToolStripMenuItem;[m
+         private System.Windows.Forms.ToolStripMenuItem cancelarVendaToolStripMenuItem;[m
+[32m+[m[32m        private System.Windows.Forms.Button btn_refresh;[m
+     }[m
+ }[m
+\ No newline at end of file[m
+[1mdiff --git a/Sales.cs b/Sales.cs[m
+[1mindex fb3f5ee..30339d3 100644[m
+[1m--- a/Sales.cs[m
+[1m+++ b/Sales.cs[m
+[36m@@ -40,5 +40,20 @@[m [mnamespace Sistema_de_Produtos[m
+             OpenSale openSale = new OpenSale();[m
+             openSale.ShowDialog();[m
+         }[m
+[32m+[m
+[32m+[m[32m        private void Sales_Load(object sender, EventArgs e)[m
+[32m+[m[32m        {[m
+[32m+[m[32m            string query = String.Format(@"[m
+[32m+[m[32m                SELECT[m
+[32m+[m[32m                    tb_sales.n_idSales as 'Num. Venda',[m
+[32m+[m[32m                    tb_client.t_nameClient as 'Nome Cliente',[m[41m [m
+[32m+[m[32m                    tb_sales.f_amount as 'Valor Total',[m
+[32m+[m[32m                    tb_sales.d_date as 'Data'[m
+[32m+[m[32m                FROM[m
+[32m+[m[32m                    tb_sales[m
+[32m+[m[32m                INNER JOIN[m
+[32m+[m[32m                    tb_client ON tb_sales.n_idClient = tb_client.n_idClient;");[m
+[32m+[m[32m            dgv_sales.DataSource = Banco.DQL(query);[m
+[32m+[m[32m        }[m
+     }[m
+ }[m
+[1mdiff --git a/bin/Debug/Sistema de Produtos.exe b/bin/Debug/Sistema de Produtos.exe[m
+[1mindex 96d9a56..381bb16 100644[m
+Binary files a/bin/Debug/Sistema de Produtos.exe and b/bin/Debug/Sistema de Produtos.exe differ
+[1mdiff --git a/bin/Debug/Sistema de Produtos.pdb b/bin/Debug/Sistema de Produtos.pdb[m
+[1mindex b25b445..a534542 100644[m
+Binary files a/bin/Debug/Sistema de Produtos.pdb and b/bin/Debug/Sistema de Produtos.pdb differ
+[1mdiff --git a/obj/Debug/Sistema de Produtos.csproj.GenerateResource.cache b/obj/Debug/Sistema de Produtos.csproj.GenerateResource.cache[m
+[1mindex 0669463..ad8e4f3 100644[m
+Binary files a/obj/Debug/Sistema de Produtos.csproj.GenerateResource.cache and b/obj/Debug/Sistema de Produtos.csproj.GenerateResource.cache differ
+[1mdiff --git a/obj/Debug/Sistema de Produtos.exe b/obj/Debug/Sistema de Produtos.exe[m
+[1mindex 96d9a56..381bb16 100644[m
+Binary files a/obj/Debug/Sistema de Produtos.exe and b/obj/Debug/Sistema de Produtos.exe differ
+[1mdiff --git a/obj/Debug/Sistema de Produtos.pdb b/obj/Debug/Sistema de Produtos.pdb[m
+[1mindex b25b445..a534542 100644[m
+Binary files a/obj/Debug/Sistema de Produtos.pdb and b/obj/Debug/Sistema de Produtos.pdb differ
