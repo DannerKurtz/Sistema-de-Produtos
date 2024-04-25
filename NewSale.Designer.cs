@@ -62,10 +62,10 @@
             this.btn_deleteItem = new System.Windows.Forms.Button();
             this.btn_completeSale = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
-            this.tb_discount = new System.Windows.Forms.TextBox();
             this.tb_totalValue = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgv_saleItens = new System.Windows.Forms.DataGridView();
+            this.mtb_discount = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pb_user)).BeginInit();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -73,7 +73,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nud_quantity)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_saleItens)).BeginInit();
             this.SuspendLayout();
             // 
             // lb_user
@@ -364,10 +364,10 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.mtb_discount);
             this.panel4.Controls.Add(this.btn_deleteItem);
             this.panel4.Controls.Add(this.btn_completeSale);
             this.panel4.Controls.Add(this.label10);
-            this.panel4.Controls.Add(this.tb_discount);
             this.panel4.Controls.Add(this.tb_totalValue);
             this.panel4.Controls.Add(this.label9);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -387,12 +387,13 @@
             // 
             // btn_completeSale
             // 
-            this.btn_completeSale.Location = new System.Drawing.Point(553, 22);
+            this.btn_completeSale.Location = new System.Drawing.Point(553, 18);
             this.btn_completeSale.Name = "btn_completeSale";
             this.btn_completeSale.Size = new System.Drawing.Size(87, 23);
             this.btn_completeSale.TabIndex = 4;
             this.btn_completeSale.Text = "Finalizar Venda";
             this.btn_completeSale.UseVisualStyleBackColor = true;
+            this.btn_completeSale.Click += new System.EventHandler(this.btn_completeSale_Click);
             // 
             // label10
             // 
@@ -403,16 +404,10 @@
             this.label10.TabIndex = 3;
             this.label10.Text = "Desconto";
             // 
-            // tb_discount
-            // 
-            this.tb_discount.Location = new System.Drawing.Point(326, 24);
-            this.tb_discount.Name = "tb_discount";
-            this.tb_discount.Size = new System.Drawing.Size(100, 20);
-            this.tb_discount.TabIndex = 2;
-            // 
             // tb_totalValue
             // 
-            this.tb_totalValue.Location = new System.Drawing.Point(442, 24);
+            this.tb_totalValue.Cursor = System.Windows.Forms.Cursors.No;
+            this.tb_totalValue.Location = new System.Drawing.Point(442, 21);
             this.tb_totalValue.Name = "tb_totalValue";
             this.tb_totalValue.ReadOnly = true;
             this.tb_totalValue.Size = new System.Drawing.Size(100, 20);
@@ -427,21 +422,31 @@
             this.label9.TabIndex = 0;
             this.label9.Text = "Valor Total";
             // 
-            // dataGridView1
+            // dgv_saleItens
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 150);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(649, 222);
-            this.dataGridView1.TabIndex = 6;
+            this.dgv_saleItens.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_saleItens.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_saleItens.Location = new System.Drawing.Point(0, 150);
+            this.dgv_saleItens.Name = "dgv_saleItens";
+            this.dgv_saleItens.Size = new System.Drawing.Size(649, 222);
+            this.dgv_saleItens.TabIndex = 6;
+            // 
+            // mtb_discount
+            // 
+            this.mtb_discount.Location = new System.Drawing.Point(329, 20);
+            this.mtb_discount.Mask = "99%";
+            this.mtb_discount.Name = "mtb_discount";
+            this.mtb_discount.Size = new System.Drawing.Size(38, 20);
+            this.mtb_discount.TabIndex = 6;
+            this.mtb_discount.Text = "00";
+            this.mtb_discount.KeyDown += new System.Windows.Forms.KeyEventHandler(this.mtb_discount_KeyDown);
             // 
             // NewSale
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(649, 450);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgv_saleItens);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.menuStrip1);
@@ -464,7 +469,7 @@
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_saleItens)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -504,10 +509,10 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button btn_completeSale;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox tb_discount;
         private System.Windows.Forms.TextBox tb_totalValue;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgv_saleItens;
         private System.Windows.Forms.Button btn_deleteItem;
+        private System.Windows.Forms.MaskedTextBox mtb_discount;
     }
 }
