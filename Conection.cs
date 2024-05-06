@@ -11,7 +11,7 @@ namespace Sistema_de_Produtos
         static private string servidor = "localhost";
         static private string bancoDados = "productsystem";
         static private string usuario = "root";
-        static private string senha = "#Ende1965#";
+        static private string senha = "#senha#";
 
         static public string Servidor = $"server = {servidor}; User Id = {usuario}; database = {bancoDados}; password = {senha}";
     }
